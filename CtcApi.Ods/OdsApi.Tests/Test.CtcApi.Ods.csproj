@@ -169,9 +169,4 @@
     <PostBuildEvent>if exist $(ProjectDir)ConnectionStrings.config xcopy /y $(ProjectDir)ConnectionStrings.config $(OutDir)
 if exist $(ProjectDir)AppSettings.config xcopy /y $(ProjectDir)AppSettings.config $(OutDir)</PostBuildEvent>
   </PropertyGroup>
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties BuildVersion_BuildVersioningStyle="None.None.None.Increment" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_ConfigurationName="Release" BuildVersion_BuildAction="ReBuild" />
-    </VisualStudio>
-  </ProjectExtensions>
 </Project>
