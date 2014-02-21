@@ -14,6 +14,7 @@
 //License and GNU General Public License along with this program.
 //If not, see <http://www.gnu.org/licenses/>.
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Ctc.Ods.Config;
 using Ctc.Ods.Types;
 
@@ -28,17 +29,19 @@ namespace Ctc.Ods.Data
 	[Table("vw_CoursePrefix")]
 	internal class CoursePrefixEntity
 	{
-		/// <summary>
-		/// The five-character abbreviation which identifies a course of study (e.g. ENGL)
-		/// </summary>
-		/// <remarks>
-		/// PrefixID values that end in <see cref="ApiSettings.RegexPatterns.CommonCourseChar"/>
-		/// only exist in the database to provide a relational lookup for <see cref="Course"/>s to
-		/// which the Common Course designation applies. Since the API handles these relationships
-		/// for us, and leaving this designator active creates duplicate subjects, it is filtered
-		/// out of any list of CoursePrefixes.
-		/// </remarks>
-		[Key]
+	  /// <summary>
+	  /// The five-character abbreviation which identifies a course of study (e.g. ENGL)
+	  /// </summary>
+	  /// <remarks>
+	  /// PrefixID values that end in <see>
+	  ///                               <cref>ApiSettings.RegexPatterns.CommonCourseChar</cref>
+	  ///                             </see>
+	  ///   only exist in the database to provide a relational lookup for <see cref="Course"/>s to
+	  /// which the Common Course designation applies. Since the API handles these relationships
+	  /// for us, and leaving this designator active creates duplicate subjects, it is filtered
+	  /// out of any list of CoursePrefixes.
+	  /// </remarks>
+	  [Key]
 		public string CoursePrefixID {get;set;}
 
 		/// <summary>

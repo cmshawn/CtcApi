@@ -90,8 +90,6 @@ namespace Ctc.Ods.Tests.SearchTests
 				facets.Add(new ModalityFacet(ModalityFacet.Options.OnCampus));
 				facets.Add(new AvailabilityFacet(AvailabilityFacet.Options.All));
 
-				string subject = null;
-
 //				IList<Section> sections = repository.GetSections(subject, YearQuarter.FromString("B122"), facets);
 				IList<Section> sections = repository.GetSections(YearQuarter.FromString("B122"), facets);
 				Assert.IsTrue(sections.Count > 0, "No sections were returned");

@@ -17,22 +17,33 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using Ctc.Ods.Data;
 using Ctc.Ods.Types;
 using System.Collections.Generic;
 
 namespace Ctc.Ods
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class YearQuarterFacet : ISectionFacet
     {
         readonly private IList<String> _yearQuarterIDs;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="yearQuarter"></param>
         public YearQuarterFacet(YearQuarter yearQuarter)
         {
             _yearQuarterIDs = new List<String>();
             _yearQuarterIDs.Add(yearQuarter.ID);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="yearQuarters"></param>
         public YearQuarterFacet(IList<YearQuarter> yearQuarters)
         {
             _yearQuarterIDs = yearQuarters.Select(d => d.ID).ToList<String>();

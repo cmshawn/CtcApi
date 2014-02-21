@@ -15,8 +15,6 @@
 //If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Data.Entity;
-using System.Data.Objects.SqlClient;
-using System.Linq;
 using System.Linq.Expressions;
 using Ctc.Ods.Data;
 
@@ -26,7 +24,7 @@ namespace Ctc.Ods
     ///</summary>
     public class CreditsFacet : ISectionFacet
     {
-        private int _credits;
+        private readonly int _credits;
 
         ///<summary>
         /// 

@@ -18,7 +18,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
@@ -169,7 +169,7 @@ namespace Ctc.Ods.Extensions
 	public static class Evaluator
 	{
 		/// <summary>
-		/// Performs evaluation & replacement of independent sub-trees
+		/// Performs evaluation &amp; replacement of independent sub-trees
 		/// </summary>
 		/// <param name="expression">The root of the expression tree.</param>
 		/// <param name="fnCanBeEvaluated">A function that decides whether a given expression node can be part of the local function.</param>
@@ -180,7 +180,7 @@ namespace Ctc.Ods.Extensions
 		}
 
 		/// <summary>
-		/// Performs evaluation & replacement of independent sub-trees
+		/// Performs evaluation &amp; replacement of independent sub-trees
 		/// </summary>
 		/// <param name="expression">The root of the expression tree.</param>
 		/// <returns>A new tree with sub-trees evaluated and replaced.</returns>
@@ -195,7 +195,7 @@ namespace Ctc.Ods.Extensions
 		}
 
 		/// <summary>
-		/// Evaluates & replaces sub-trees when first candidate is reached (top-down)
+		/// Evaluates &amp; replaces sub-trees when first candidate is reached (top-down)
 		/// </summary>
 		class SubtreeEvaluator : ExpressionVisitor
 		{
@@ -289,11 +289,21 @@ namespace Ctc.Ods.Extensions
 	/// </summary>
 	public class LocalCollectionExpander : ExpressionVisitor
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="expression"></param>
+		/// <returns></returns>
 		public static Expression Rewrite(Expression expression)
 		{
 			return new LocalCollectionExpander().Visit(expression);
 		}
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="node"></param>
+    /// <returns></returns>
 		protected override Expression VisitMethodCall(MethodCallExpression node)
 		{
 			// pair the method's parameter types with its arguments
