@@ -98,8 +98,7 @@ namespace CtcApi.Diagnostics
                     _log.Trace(message);
                     break;
                 default:
-                    _log.Warn(
-                            "Unsupported LogLevel specified. Supported levels are Info, Debug and Trace. Falling back to Trace.");
+                    _log.Warn("Unsupported LogLevel specified. Supported levels are Info, Debug and Trace. Falling back to Trace.");
                     _log.Trace(message);
                     break;
             }
